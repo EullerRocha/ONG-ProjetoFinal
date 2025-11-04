@@ -1,0 +1,155 @@
+:root {
+  /* 🎨 Cores */
+  --color-primary: #0055A4;
+  --color-secondary: #00A651;
+  --color-accent: #FFD200;
+  --color-danger: #D62828;
+  --color-warning: #F77F00;
+  --color-light: #F5F5F5;
+  --color-dark: #1A1A1A;
+  --color-gray: #6C757D;
+  --color-contrast: #000;
+  --color-bg: #FFFFFF;
+
+  /* 🔠 Tipografia */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 2rem;
+
+  /* 📏 Espaçamento modular */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* 🌙 Tema claro */
+  --bg-color: var(--color-bg);
+  --text-color: var(--color-dark);
+}
+
+/* 🌙 Tema escuro */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #EDEDED;
+}
+
+/* ♿ Alto contraste */
+.high-contrast {
+  --bg-color: #000;
+  --text-color: #FFF;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+header {
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2);
+}
+
+.logo { font-size: var(--font-lg); font-weight: bold; }
+
+nav ul {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover, nav a.active {
+  text-decoration: underline;
+}
+
+#menu-toggle {
+  display: none;
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: var(--font-lg);
+}
+
+.theme-buttons button {
+  margin-left: var(--space-1);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: var(--font-lg);
+}
+
+main {
+  padding: var(--space-3);
+}
+
+section {
+  margin-bottom: var(--space-5);
+}
+
+/* 🧩 Grid 12 colunas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-2);
+}
+
+/* 📱 Responsividade */
+@media (max-width: 1200px) {
+  nav ul { flex-wrap: wrap; }
+}
+@media (max-width: 992px) {
+  #menu-toggle { display: block; }
+  nav ul { display: none; flex-direction: column; }
+  nav.active ul { display: flex; }
+}
+@media (max-width: 768px) {
+  body { font-size: var(--font-sm); }
+}
+@media (max-width: 576px) {
+  header { flex-direction: column; }
+}
+
+/* 🧭 Botões e Cards */
+button, .btn {
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  border-radius: 6px;
+  background: var(--color-secondary);
+  color: #fff;
+  cursor: pointer;
+}
+button:hover, .btn:hover { background: var(--color-accent); color: #000; }
+
+/* 💬 Feedback */
+.alert {
+  background: var(--color-warning);
+  color: #000;
+  padding: var(--space-1);
+  margin-bottom: var(--space-2);
+  border-radius: 4px;
+}
+
+footer {
+  background: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  padding: var(--space-2);
+}
